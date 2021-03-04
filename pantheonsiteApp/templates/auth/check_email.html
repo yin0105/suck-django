@@ -1,0 +1,15 @@
+{% extends 'base_accounts.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="text-center">
+        <br>
+        <h2> Welcome to AndNowYouKnow! <br> <br> Your account was created successfully. </h2>
+        <h3> Please check your email to verify your account. </h3> <br> <br>
+
+        <h4> You can go to login page with clicking <a style="text-decoration: underline" href="{% url 'login'%}"> here </a> </h4>
+    </div>
+  </div>
+{% endblock %}

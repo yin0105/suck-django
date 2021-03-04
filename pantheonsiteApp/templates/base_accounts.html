@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin: 50px auto">
+    <h1 class="text-center my-4">
+      <a href="{% url 'home' %}"> <img src="{% static 'image/andnowuknow.svg' %}" style="width: 270px"> </a>
+    </h1>
+    {% block content %}
+    {% endblock %}
+  </div>
+{% endblock %}

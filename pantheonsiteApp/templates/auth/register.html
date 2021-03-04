@@ -1,0 +1,48 @@
+
+{% extends 'auth/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+      <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Sign Up</h3>
+            <form method="post" id="register"  action = "{% url 'register' %}">
+                {% csrf_token %}
+                {% include 'auth/form.html' %}
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Do you have already an account? <a href="{% url 'login' %}">Sign in</a>
+          {% comment %} <div class="social_login_icons">
+            <a><div class="social_icon"> <i class="fab fa-google"></i> </div></a>
+            <div class="social_icon"> <i class="fab fa-linkedin-in"></i> </div>
+            <div class="social_icon"> <i class="fab fa-skype"></i> </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block scriptContent %}
+<script>
+    $(document).ready(function(){
+      $('#register').submit(function(){
+        let pwd = $('input[name="password"]').val()
+        let conPwd = $('input[name="conpassword"]').val()
+        console.log(pwd)
+        console.log(conPwd)
+        if (pwd != conPwd) {
+          alert("Please input the correct password and confirm password")
+          return false
+        }
+        return
+      })
+    })
+</script>
+{% endblock %}

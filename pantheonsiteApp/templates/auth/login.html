@@ -1,0 +1,85 @@
+{% extends 'auth/base.html' %} {% block title %}Log in{% endblock %} {% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Log in</h3>
+                <form method="post"  action = "{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted text-center" style="padding: 15px 30px">
+                Do you have an account? <a href="{% url 'register' %}">Sign up</a>
+                 <div id="my-signin2" style="display:none"></div>
+                <div class="social_login_icons text-center">
+                   
+                    {% comment %} <a><div class="social_icon"> <i class="fab fa-google"></i> </div></a>
+                    <div class="social_icon"> <i class="fab fa-linkedin-in"></i> </div>
+                    <div class="social_icon"> <i class="fab fa-skype"></i> </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scriptContent %}
+<script>
+ $.ajaxSetup({
+        headers: { "X-CSRFToken": '{{csrf_token}}' }
+    });
+    social_url = "{% url 'social-auth' %}";
+var is_try = false
+{% comment %} signOut() {% endcomment %}
+setTimeout(function(){ 
+    signOut()
+    is_try = true
+    $('#my-signin2').show()
+    }, 2000)
+function onSuccess(googleUser) {
+   var profile = googleUser.getBasicProfile();
+    let json_data = {
+        social_type: 'google',
+        social_id: profile.getId(),
+        social_name: profile.getName(),
+        social_email: profile.getEmail(),
+        social_image: profile.getImageUrl()
+    }
+    let url_path = social_url;
+    if(is_try) {
+        $.post(url_path, json_data, moreResponse);    
+    }
+}
+function moreResponse(data, status) {
+    console.log(data)
+    if (data.status == 1) {
+        window.location.href = '/admin/profile'
+    } else {
+        alert('Unregisterd user.')
+        signOut()
+    }
+}
+function onFailure(error) {
+    console.log(error);
+}
+function renderButton() {
+    gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 'auto',
+        'height': 36,
+        'longtitle': false,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+}
+</script>
+{% endblock %}

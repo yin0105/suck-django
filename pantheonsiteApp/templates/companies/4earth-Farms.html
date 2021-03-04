@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 Earth-Farms</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900|Fjalla+One|Roboto+Condensed:400,700" rel="stylesheet" type="text/css" />
+
+    <!-- Stylesheets-->
+    <link type="text/css" rel="stylesheet" href="{% static './css/bootstrap.min.css' %}" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static './css/simplePagination.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static './css/andnowuknow.css' %}" />
+</head>
+
+<!-- Header -->
+<header>
+    <!-- social icons -->
+    <div id="container">
+        <!-- social icons of header-->
+        <div class="frosting">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-12"></div>
+                    <div class="col-md-3 col-sm-12 text-right hidden-sm hidden-xs">
+                        <a href="https://instagram.com/andnowuknow" alt="andnowuknow on Instagram" target="_blank" class="btn btn-default">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youube.com/user/andnowuknow" alt="andnowuknow on YoutuTe" target="_blank" class="btn btn-default">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/andnowuknow" alt="andnowuknow on Linkedin" target="_blank" class="btn btn-default">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.twitter.com/andnowuknow" alt="andnowuknow on twitter" target="_blank" class="btn btn-default">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/andnowuknow" alt="andnowuknow on Facebook" target="_blank" class="btn btn-default">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container p-0">
+            <a class="navbar-brand" href="#"> <img src="{% static './image/andnowuknow.svg'%}" class="logo"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/" id="newsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</span></a>
+                        <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                            <li class="first leaf"><a href="{% url 'login' %}">Behind the Greens</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">Buyside News</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">Product Showcase</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">Shop Talk</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">Special Reports</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">The Bloom</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">Quick Dish</a></li>
+                            <li class="leaf"><a href="{% url 'login' %}">What's In Store</a></li>
+                            <li class="last leaf"><a href="{% url 'login' %}">Headlines</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Companies</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/produce-jobs" id="jobsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <a class="dropdown-item" title="Fresh Produce Jobs" href="{% url 'login' %}" target="_blank">Fresh Produce Jobs</a>
+                            <a class="dropdown-item" title="Post my Job" href="{% url 'login' %}" target="_blank">Post Your Jobs</a>
+                            <a class="dropdown-item" title="Joe Produce Job Recruiting" href="{% url 'login' %}" target="_blank">Recruiting</a>
+                            <a class="dropdown-item" title="Resume writing" href="{% url 'login' %}" target="_blank">Resume Writing</a>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Subscribe</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeEsodgak9HhIM2MmjZOxB8grFGXAufeQOpF-32vlRmB-y-Dw/closedform" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contact Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <a class="dropdown-item" href="{% url 'login' %}">Email</a>
+                            <a class="dropdown-item" href="{% url 'login' %}">Upload a Press Release</a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Section -->
+<div class="main-container container">
+    <div class="row">
+        <div class="filling">
+            <section class="col-sm-12">
+                <h1 class="page-header">4Earth-Farms</h1>
+                <div class="row">
+                    <div class="col-sm-5 col-xs-12 company-logo-row">
+                        <img class="category-logo img-responsive"  src="{% static './image/4earth-farms_comp_pro_apr_2016.jpg'%}" width="350" height="250" alt="48forty Solutions">
+                        <hr>
+                        <a href="http://www.48forty.com/" title="48forty SolutionsCompany Profile" class="btn btn-success btn-large btn-block" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> 4Earth Farms</a>
+                        <hr>
+                        <div class="company-social-icons">
+                            <a href="https://www.facebook.com/48forty/" target="_blank" class="btn btn-default btn-radius btn-lg" title="facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/48forty" target="_blank" class="btn btn-default btn-radius btn-lg" title="twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/28132964/" target="_blank" class="btn btn-default btn-radius btn-lg" title="linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <hr>
+                        </div>
+                        <blockquote class="term-description">We are a passionate, diverse group of farmers, 
+                        harvesters, drivers, and thinkers who are dedicated to passing the bounty of the earth into the hands of your customers.
+                        4Earth Farms was founded in 1993 on a very simple ideal: provide superior customer service and consistently superlative produce year-round.
+                        Over the years our guiding principles have grown with us – rapid innovation that responds to our customer’s needs, sustainable practices that nourish the earth, 
+                        and measurable stewardship at every level. We see ourselves as sticklers for quality. 
+                        Ambassadors of efficiency. Champions of the consumer. Custodians of the earth.
+                        <br>
+                        From the soil to sale, land to logistics, farm to fork, we’re the best in the field.</blockquote>
+                    </div>
+                    <div class="col-sm-7 col-xs-12">
+                        <h4 class="major-header"> Categories </h4>
+                        <hr>
+                        <a href="/category/tech-services" class="category-link" title="Tech &amp; Services">
+                            <img class="category-thumb img-responsive" src="{% static './image/tech_square.jpg'%}" width="150" height="150" alt="Tech &amp; Services" title="Tech &amp; Services">
+                            <span class="category-flag" style="bottom: -35px;">Tech &amp; Services</span>
+                        </a>
+                        <hr>
+                        <ul class="list-group">
+                            <li class="views-row views-row-1 views-row-odd views-row-first list-group-item">
+                                <div class="views-field views-field-title">
+                                <span class="field-content"><a href="/buyside-news/amazon-announces-q1-profits-sales-51-billion/lillie-apostolos/58015">4Earth Farms Works With Local Agencies; Offers Families Access to Fresh Produce</a></span> </div>
+                            </li>
+                            <li class="views-row views-row-2 views-row-even views-row-last list-group-item">
+                                <div class="views-field views-field-title">
+                                <span class="field-content"><a href="/shop-talk/48forty-solutions-new-solo-venture-kyle-otting-and-hillary-femal-discuss/kayla-webb/57521">4Earth Farms' Mark Munger Discusses Bolstering Its Year-Round Brussels Sprouts Programs</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<hr class="footer-break">
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <address>
+                    <strong> andnowuknow.com </strong>
+                    <br> 2005 Capitol Ave. <br> Sacramento, CA 95811 <br> <abbr title="Phone"> P:</abbr> (916) 346-4511  <br> 
+                </address>
+                <address>
+                    <strong> Press & Editorial </strong>
+                    <br> <strong><a href="mailto:pr@andnowuknow.com" target="_blank" titile="Email Our Press & Editorial Staff">pr@andnowuknow.com</a></strong> <br>
+                    <abbr title="Phone"> P:</abbr> (916) 346-4511 <hr>
+                    <strong> Sales and Advertising </strong>
+                    <br> <strong><a href="mailto:sales@andnowuknow.com" target="_blank" titile="Email Our Sales and Advertising Staff">sales@andnowuknow.com</a></strong> <br>
+                    <abbr title="Phone"> P:</abbr> (916) 449-2725  <br> 
+                </address>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="dropdown">
+                    <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                        News Sections <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'login' %}">Buyside News</a></li>
+                        <li><a href="{% url 'login' %}">Behind the Greens</a></li>
+                        <li><a href="{% url 'login' %}">Headlines</a></li>
+                        <li><a href="{% url 'login' %}">Quick Dish</a></li>
+                        <li><a href="{% url 'login' %}">Shop Talk</a></li>
+                        <li><a href="{% url 'login' %}">Special Reports</a></li>
+                        <li><a href="{% url 'login' %}">The Bloom</a></li>
+                        <li><a href="{% url 'login' %}">Product Showcase</a></li>
+                        <li><a href="{% url 'login' %}">What's In Store</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="/produce-jobs" title="Produce Jobs">Fresh Produce Jobs</a></li>
+                    <li><a href="{% url 'login' %}" title="Categories">Fresh Produce Categories</a></li>
+                    <li><a href="{% url 'home'%}" title="Companies">Fresh Produce Companies</a></li>
+                    <li><a href="{% url 'login' %}" title="Subscribe">Subscribe to Our Newsletter</a></li>
+                    <li><a href="/contact-anuk" title="Contact Us">Contact Our Staff</a></li>
+                    <li><a href="/testimonials" title="Testimonials">Testimonials</a></li>
+                    <li><a href="/terms-of-service" title="Terms of Service">Terms of Service |</a><a href="/privacy-policy" title="Privacy Policy"> Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="text-center">
+                    © 2008 - 2021 <strong><a href="/" title="AndNowUKnow">andnowuknow.com</a></strong>
+                </div>
+                <hr>
+                <div class="row social-footer-block">
+                    <div class="col-lg-2 col-sm-2 col-xs-2"><a class="btn btn-radius text-center" alt="ANUK on Facebook" href="https://www.facebook.com/andnowuknow" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+                    <div class="col-lg-2 col-sm-2 col-xs-2"><a class="btn btn-radius text-center" alt="ANUK on Twitter" href="https://www.twitter.com/andnowuknow" target="_blank"><i class="fab fa-twitter"></i></a></div>
+                    <div class="col-lg-2 col-sm-2 col-xs-2"><a class="btn btn-radius text-center" alt="ANUK on Linkedin" href="http://www.linkedin.com/company/andnowuknow" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+                    <div class="col-lg-2 col-sm-2 col-xs-2"><a class="btn btn-radius text-center" alt="ANUK on YouTube" href="http://www.youtube.com/user/andnowuknow" target="_blank"><i class="fab fa-youtube"></i></a></div>
+                    <div class="col-lg-2 col-sm-2 col-xs-2"><a href="https://instagram.com/andnowuknow" class="btn btn-radius text-center" alt="ANUK on Instagram" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static './js/jquery.min.js' %}"></script>
+<script src="{% static './js/popper.min.js' %}"></script>
+<script src="{% static './js/bootstrap.min.js' %}"></script>
+<script src="{% static './js/jquery.bootpag.min.js' %}"></script>
+<script src="{% static './js/andnowuknow.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<div class="container pt-5">
+
+        {% if user.is_authenticated %}
+
+
+        <hr>
+
+        <a class="btn btn-primary mt-5" href="{% url 'logout' %}">Logout</a>
+
+        {% else %}
+        <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+        
+
+        {% endif %}
+        
+    </div>
